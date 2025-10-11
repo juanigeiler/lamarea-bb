@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# La Marea B&B - Landing Page
 
-## Getting Started
+Landing page oficial del Bed & Breakfast **La Marea** en Tigre, Buenos Aires.
 
-First, run the development server:
+## 🏡 Sobre el Proyecto
+
+Sitio web moderno y optimizado para SEO que presenta las comodidades y servicios de La Marea B&B, incluyendo:
+
+- Galería de fotos con categorías (Exterior, Habitaciones, Áreas Comunes, Desayuno)
+- Información de amenidades (Pileta, Jardín, Desayuno, WiFi, Parrilla, Cocina)
+- Reseñas de huéspedes
+- Integración con Google Maps
+- Enlaces a redes sociales y WhatsApp
+- Schema.org markup para mejor SEO
+
+## 🛠️ Stack Tecnológico
+
+- **Framework**: Next.js 15 (App Router)
+- **Lenguaje**: TypeScript
+- **Estilos**: Tailwind CSS v4
+- **Imágenes**: Cloudinary (optimización y CDN)
+- **Deploy**: Vercel
+
+## 🚀 Desarrollo
 
 ```bash
+# Instalar dependencias
+npm install
+
+# Servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build de producción
+npm run build
+
+# Servidor de producción
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El servidor de desarrollo corre en [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌍 Variables de Entorno
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Crea un archivo `.env.local` con:
 
-## Learn More
+```bash
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=tu-cloud-name
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Estructura del Proyecto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+/app
+  /components
+    - Amenities.tsx      # Comodidades del B&B
+    - Gallery.tsx        # Galería de fotos con filtros
+    - ImageLightbox.tsx  # Modal de imagen
+    - Reviews.tsx        # Reseñas y Google Maps
+    - StructuredData.tsx # SEO Schema.org
+  - page.tsx             # Página principal
+  - layout.tsx           # Layout con metadata SEO
+  - sitemap.ts           # Sitemap automático
+  - robots.ts            # robots.txt
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+/public
+  - logo.png             # Logo del B&B
+```
 
-## Deploy on Vercel
+## 🎨 Características
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- ✅ Diseño mobile-first responsive
+- ✅ Optimización de imágenes con Cloudinary
+- ✅ SEO optimizado (metadata, schema.org, sitemap)
+- ✅ Lightbox para galería de fotos
+- ✅ Sistema de categorías con filtros
+- ✅ Integración con Google Maps
+- ✅ Botones de contacto (WhatsApp, Instagram)
+- ✅ Rating 9.6/10 destacado
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 Deploy en Vercel
+
+1. Conecta tu repositorio de GitHub a Vercel
+2. Configura las variables de entorno
+3. Deploy automático en cada push a `main`
+
+## 📞 Contacto
+
+- **Ubicación**: Avenida Liniers 573, Tigre, Buenos Aires
+- **Instagram**: [@lamareatigre](https://www.instagram.com/lamareatigre/)
+- **WhatsApp**: +54 11 2640-4169
+- **Rating**: 9.6/10 en Booking.com
+
+## 📄 Licencia
+
+Proyecto privado © 2025 La Marea B&B
