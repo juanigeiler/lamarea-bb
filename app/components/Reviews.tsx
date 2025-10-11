@@ -28,7 +28,7 @@ export default function Reviews() {
   )
 
   return (
-    <section className="py-12 px-4 md:py-20 md:px-8 max-w-7xl mx-auto bg-amber-50/30">
+    <section className="py-12 px-4 md:py-20 md:px-8 max-w-7xl mx-auto bg-amber-50">
       <div className="text-center mb-8 md:mb-12">
         <h2 className="text-3xl md:text-4xl font-serif font-bold text-amber-900 mb-4">
           Opiniones de Nuestros Huéspedes

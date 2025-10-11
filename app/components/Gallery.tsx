@@ -122,7 +122,7 @@ export default function Gallery() {
         </h2>
 
         {/* Tabs - Mobile optimized */}
-        <div className="mb-8 overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="mb-8 overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
           <div className="flex gap-2 md:justify-center min-w-max md:min-w-0">
             {CATEGORIES.map((category) => (
               <button

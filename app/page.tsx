@@ -140,7 +140,7 @@ export default function Home() {
         </section>
 
         {/* Contacto y Redes - Warm style */}
-        <section id="contacto" className="py-12 px-4 md:py-20 md:px-8 max-w-6xl mx-auto bg-amber-50/20">
+        <section id="contacto" className="py-12 px-4 md:py-20 md:px-8 max-w-6xl mx-auto bg-amber-50">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-amber-900 mb-8 md:mb-12 text-center">
             Contacto
           </h2>
