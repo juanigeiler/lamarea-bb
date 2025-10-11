@@ -57,7 +57,7 @@ export default function Amenities() {
   ]
 
   return (
-    <section className="py-12 px-4 md:py-20 md:px-8 max-w-7xl mx-auto bg-amber-50">
+    <section className="py-12 px-4 md:py-20 md:px-8 max-w-7xl mx-auto bg-gradient-to-br from-amber-50/30 via-white to-amber-100/40">
       <h2 className="text-3xl md:text-4xl font-serif font-bold text-amber-900 mb-4 md:mb-6 text-center">
         Comodidades
       </h2>

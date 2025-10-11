@@ -2,14 +2,16 @@ import StructuredData from './components/StructuredData'
 import Gallery from './components/Gallery'
 import Amenities from './components/Amenities'
 import Reviews from './components/Reviews'
+import StickyHeader from './components/StickyHeader'
 import Image from 'next/image'
 
 export default function Home() {
   return (
     <>
       <StructuredData />
+      <StickyHeader />
 
-      <div className="min-h-screen bg-amber-50/10 font-sans">
+      <div className="min-h-screen bg-gradient-to-b from-amber-50/20 via-white to-amber-50/20 font-sans">
         {/* Hero Section - Clean gradient background */}
         <section className="relative min-h-[60vh] md:min-h-[65vh] flex items-center justify-center overflow-hidden px-4 py-10 md:py-12 bg-gradient-to-br from-amber-50 via-white to-amber-100/50">
           <div className="relative text-center max-w-3xl mx-auto w-full">
@@ -140,7 +142,7 @@ export default function Home() {
         </section>
 
         {/* Contacto y Redes - Warm style */}
-        <section id="contacto" className="py-12 px-4 md:py-20 md:px-8 max-w-6xl mx-auto bg-amber-50">
+        <section id="contacto" className="py-12 px-4 md:py-20 md:px-8 max-w-6xl mx-auto bg-gradient-to-br from-amber-50/30 via-white to-amber-100/40">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-amber-900 mb-8 md:mb-12 text-center">
             Contacto
           </h2>

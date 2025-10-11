@@ -96,7 +96,7 @@ const CATEGORIES = [
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>('todas')
-  const [lightboxImage, setLightboxImage] = useState<GalleryImage | null>(null)
+  const [lightboxImageIndex, setLightboxImageIndex] = useState<number | null>(null)
   const [showAll, setShowAll] = useState(false)
 
   const filteredImages =
@@ -146,7 +146,7 @@ export default function Gallery() {
             {displayedImages.map((image, index) => (
               <button
                 key={index}
-                onClick={() => setLightboxImage(image)}
+                onClick={() => setLightboxImageIndex(filteredImages.findIndex(img => img.publicId === image.publicId))}
                 className="relative aspect-square bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl overflow-hidden group cursor-pointer"
               >
                 <CldImage
@@ -235,11 +235,12 @@ export default function Gallery() {
       </section>
 
       {/* Lightbox */}
-      {lightboxImage && (
+      {lightboxImageIndex !== null && (
         <ImageLightbox
-          publicId={lightboxImage.publicId}
-          alt={lightboxImage.alt}
-          onClose={() => setLightboxImage(null)}
+          images={filteredImages}
+          currentIndex={lightboxImageIndex}
+          onClose={() => setLightboxImageIndex(null)}
+          onNavigate={(newIndex) => setLightboxImageIndex(newIndex)}
         />
       )}
     </>

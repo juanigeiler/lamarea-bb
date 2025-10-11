@@ -3,15 +3,48 @@
 import { useEffect, useState } from 'react'
 import { CldImage } from 'next-cloudinary'
 
-interface ImageLightboxProps {
-  publicId: string  // Cloudinary public ID instead of full URL
+interface GalleryImage {
+  publicId: string
   alt: string
-  onClose: () => void
+  category: string
 }
 
-export default function ImageLightbox({ publicId, alt, onClose }: ImageLightboxProps) {
+interface ImageLightboxProps {
+  images: GalleryImage[]
+  currentIndex: number
+  onClose: () => void
+  onNavigate: (newIndex: number) => void
+}
+
+export default function ImageLightbox({ images, currentIndex, onClose, onNavigate }: ImageLightboxProps) {
   const [imageLoaded, setImageLoaded] = useState(false)
   const [showSpinner, setShowSpinner] = useState(false)
+
+  const currentImage = images[currentIndex]
+  const hasPrev = currentIndex > 0
+  const hasNext = currentIndex < images.length - 1
+
+  const goToPrev = () => {
+    if (hasPrev) {
+      setImageLoaded(false)
+      setShowSpinner(false)
+      onNavigate(currentIndex - 1)
+    }
+  }
+
+  const goToNext = () => {
+    if (hasNext) {
+      setImageLoaded(false)
+      setShowSpinner(false)
+      onNavigate(currentIndex + 1)
+    }
+  }
+
+  useEffect(() => {
+    // Reset loading states when image changes
+    setImageLoaded(false)
+    setShowSpinner(false)
+  }, [currentIndex])
 
   useEffect(() => {
     // Prevent scrolling when lightbox is open
@@ -24,18 +57,20 @@ export default function ImageLightbox({ publicId, alt, onClose }: ImageLightboxP
       }
     }, 150)
 
-    // ESC key to close
-    const handleEsc = (e: KeyboardEvent) => {
+    // Keyboard navigation
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
+      if (e.key === 'ArrowLeft') goToPrev()
+      if (e.key === 'ArrowRight') goToNext()
     }
-    window.addEventListener('keydown', handleEsc)
+    window.addEventListener('keydown', handleKeyDown)
 
     return () => {
       clearTimeout(spinnerTimer)
       document.body.style.overflow = 'unset'
-      window.removeEventListener('keydown', handleEsc)
+      window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [onClose, imageLoaded])
+  }, [onClose, imageLoaded, currentIndex])
 
   return (
     <div
@@ -50,6 +85,43 @@ export default function ImageLightbox({ publicId, alt, onClose }: ImageLightboxP
       >
         ×
       </button>
+
+      {/* Counter */}
+      <div className="absolute top-4 left-4 bg-black/50 text-white px-4 py-2 rounded-full text-sm font-medium z-10">
+        {currentIndex + 1} / {images.length}
+      </div>
+
+      {/* Previous button */}
+      {hasPrev && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
+            goToPrev()
+          }}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 md:p-4 rounded-full transition-all z-10 hover:scale-110"
+          aria-label="Imagen anterior"
+        >
+          <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+      )}
+
+      {/* Next button */}
+      {hasNext && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
+            goToNext()
+          }}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 md:p-4 rounded-full transition-all z-10 hover:scale-110"
+          aria-label="Imagen siguiente"
+        >
+          <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      )}
 
       {/* Image container - only takes space needed for image */}
       <div
@@ -70,8 +142,8 @@ export default function ImageLightbox({ publicId, alt, onClose }: ImageLightboxP
 
         {/* Single image - fade in when loaded */}
         <CldImage
-          src={publicId}
-          alt={alt}
+          src={currentImage.publicId}
+          alt={currentImage.alt}
           width={1920}
           height={1080}
           className={`max-w-full max-h-[90vh] w-auto h-auto object-contain transition-opacity duration-300 ${
@@ -84,8 +156,8 @@ export default function ImageLightbox({ publicId, alt, onClose }: ImageLightboxP
       </div>
 
       {/* Instruction text */}
-      <p className="absolute bottom-4 text-white/70 text-sm">
-        Click fuera de la imagen o presiona ESC para cerrar
+      <p className="absolute bottom-4 text-white/70 text-sm text-center">
+        Usa las flechas o ← → para navegar • ESC o click fuera para cerrar
       </p>
     </div>
   )
