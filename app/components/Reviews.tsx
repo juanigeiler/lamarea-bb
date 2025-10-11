@@ -54,7 +54,7 @@ export default function Reviews() {
 
             {/* Comment */}
             <p className="text-amber-800/80 mb-4 italic leading-relaxed text-sm md:text-base">
-              "{review.comment}"
+              &ldquo;{review.comment}&rdquo;
             </p>
 
             {/* Author & Date */}
