@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://lamarea.com.ar' // Cambiar cuando tengas el dominio
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lamarea-bb.vercel.app'
 
   return [
     {
