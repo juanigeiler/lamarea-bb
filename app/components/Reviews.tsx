@@ -2,8 +2,17 @@
 
 import { useEffect, useState } from 'react'
 
+interface Review {
+  author_name: string
+  rating: number
+  text: string
+  relative_time_description: string
+  profile_photo_url?: string
+}
+
 export default function Reviews() {
   const [googleRating, setGoogleRating] = useState({ rating: 4.9, reviewCount: 0 })
+  const [reviews, setReviews] = useState<Review[]>([])
 
   useEffect(() => {
     fetch('/api/google-rating')
@@ -13,32 +22,14 @@ export default function Reviews() {
           rating: data.rating,
           reviewCount: data.reviewCount
         })
+        if (data.reviews && data.reviews.length > 0) {
+          setReviews(data.reviews)
+        }
       })
       .catch(() => {
         // Silently fail and use default values
       })
   }, [])
-  // Reviews destacadas de Google - reemplazar con reviews reales
-  const featuredReviews = [
-    {
-      name: 'María González',
-      rating: 5,
-      comment: 'Excelente lugar, muy limpio y cómodo. La atención de los dueños es increíble, te hacen sentir como en casa. El desayuno delicioso.',
-      date: 'Hace 2 meses',
-    },
-    {
-      name: 'Carlos Rodríguez',
-      rating: 5,
-      comment: 'Hermoso lugar para descansar. La piscina y el jardín son un plus. Muy cerca de todo en Tigre. Súper recomendable.',
-      date: 'Hace 1 mes',
-    },
-    {
-      name: 'Laura Martínez',
-      rating: 5,
-      comment: 'Un lugar encantador, atención familiar excepcional. Volveremos seguro!',
-      date: 'Hace 3 semanas',
-    },
-  ]
 
   const StarIcon = ({ filled = true }: { filled?: boolean }) => (
     <svg className={`w-4 h-4 ${filled ? 'text-yellow-500' : 'text-gray-300'} fill-current`} viewBox="0 0 20 20">
@@ -81,32 +72,38 @@ export default function Reviews() {
       </div>
 
       {/* Featured Reviews */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 max-w-6xl mx-auto">
-        {featuredReviews.map((review, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-2xl p-6 shadow-md border-2 border-amber-700/20 hover:shadow-lg transition-shadow"
-          >
-            {/* Stars */}
-            <div className="flex gap-1 mb-3">
-              {[...Array(5)].map((_, i) => (
-                <StarIcon key={i} filled={i < review.rating} />
-              ))}
-            </div>
+      {reviews.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 max-w-6xl mx-auto">
+          {reviews.map((review, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-2xl p-6 shadow-md border-2 border-amber-700/20 hover:shadow-lg transition-shadow"
+            >
+              {/* Stars */}
+              <div className="flex gap-1 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <StarIcon key={i} filled={i < review.rating} />
+                ))}
+              </div>
 
-            {/* Comment */}
-            <p className="text-amber-800/80 mb-4 italic leading-relaxed text-sm md:text-base">
-              &ldquo;{review.comment}&rdquo;
-            </p>
+              {/* Comment */}
+              <p className="text-amber-800/80 mb-4 italic leading-relaxed text-sm md:text-base">
+                &ldquo;{review.text}&rdquo;
+              </p>
 
-            {/* Author & Date */}
-            <div className="border-t border-amber-200/50 pt-3">
-              <p className="font-semibold text-amber-900 text-sm">{review.name}</p>
-              <p className="text-xs text-amber-700/60">{review.date}</p>
+              {/* Author & Date */}
+              <div className="border-t border-amber-200/50 pt-3">
+                <p className="font-semibold text-amber-900 text-sm">{review.author_name}</p>
+                <p className="text-xs text-amber-700/60">{review.relative_time_description}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center mb-12 text-amber-700/60">
+          <p>Cargando opiniones...</p>
+        </div>
+      )}
 
       {/* Google Maps Reviews Embed */}
       <div className="max-w-4xl mx-auto">

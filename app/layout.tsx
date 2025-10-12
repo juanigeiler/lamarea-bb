@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Merriweather, Open_Sans } from "next/font/google";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 import "./globals.css";
 
 const merriweather = Merriweather({
@@ -21,6 +22,9 @@ export const metadata: Metadata = {
   authors: [{ name: "La Marea B&B" }],
   icons: {
     icon: '/icon.png',
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
   },
   openGraph: {
     title: "La Marea B&B - Bed & Breakfast en Tigre",
@@ -56,6 +60,7 @@ export default function RootLayout({
       <body
         className={`${openSans.variable} ${merriweather.variable} antialiased`}
       >
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
