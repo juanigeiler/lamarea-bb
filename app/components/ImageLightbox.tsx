@@ -70,7 +70,7 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
       document.body.style.overflow = 'unset'
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [onClose, imageLoaded, currentIndex])
+  }, [onClose, imageLoaded, currentIndex, goToPrev, goToNext])
 
   return (
     <div

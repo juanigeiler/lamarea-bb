@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { CldImage } from 'next-cloudinary'
 import ImageLightbox from './ImageLightbox'
 
@@ -98,6 +98,7 @@ export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>('todas')
   const [lightboxImageIndex, setLightboxImageIndex] = useState<number | null>(null)
   const [showAll, setShowAll] = useState(false)
+  const buttonRef = useRef<HTMLDivElement>(null)
 
   const filteredImages =
     activeCategory === 'todas'
@@ -113,6 +114,15 @@ export default function Gallery() {
   useEffect(() => {
     setShowAll(false)
   }, [activeCategory])
+
+  // Función para colapsar y hacer scroll al botón
+  const handleCollapse = () => {
+    setShowAll(false)
+    // Scroll directo (sin animación) al botón en el próximo frame
+    requestAnimationFrame(() => {
+      buttonRef.current?.scrollIntoView({ behavior: 'auto', block: 'center' })
+    })
+  }
 
   return (
     <>
@@ -194,7 +204,7 @@ export default function Gallery() {
 
         {/* Ver más button */}
         {hasMore && !showAll && (
-          <div className="flex justify-center mt-8">
+          <div ref={buttonRef} className="flex justify-center mt-8">
             <button
               onClick={() => setShowAll(true)}
               className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-800 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2"
@@ -211,7 +221,7 @@ export default function Gallery() {
         {showAll && hasMore && (
           <div className="flex justify-center mt-8">
             <button
-              onClick={() => setShowAll(false)}
+              onClick={handleCollapse}
               className="px-8 py-4 bg-amber-100 text-amber-800 rounded-full font-semibold text-lg shadow-md hover:shadow-lg hover:scale-105 transition-all flex items-center gap-2 border-2 border-amber-700/30"
             >
               <span>Ver menos</span>

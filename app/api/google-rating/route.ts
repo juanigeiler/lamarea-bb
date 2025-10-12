@@ -33,7 +33,13 @@ export async function GET() {
 
     if (data.status === 'OK' && data.result) {
       // Tomar máximo 3 reviews
-      const reviews = (data.result.reviews || []).slice(0, 3).map((review: any) => ({
+      const reviews = (data.result.reviews || []).slice(0, 3).map((review: {
+        author_name: string
+        rating: number
+        text: string
+        relative_time_description: string
+        profile_photo_url?: string
+      }) => ({
         author_name: review.author_name,
         rating: review.rating,
         text: review.text,
@@ -54,7 +60,7 @@ export async function GET() {
       reviewCount: 0,
       reviews: []
     })
-  } catch (error) {
+  } catch {
     return NextResponse.json({
       rating: 4.9,
       reviewCount: 0,
