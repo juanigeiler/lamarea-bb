@@ -1,6 +1,7 @@
 import StructuredData from './components/StructuredData'
 import Gallery from './components/Gallery'
 import Amenities from './components/Amenities'
+import FAQ from './components/FAQ'
 import Reviews from './components/Reviews'
 import RatingBadge from './components/RatingBadge'
 import Image from 'next/image'
@@ -42,7 +43,7 @@ export default function Home() {
               Un lugar cálido y acogedor, atendido por sus dueños
             </p>
             <p className="text-sm sm:text-base text-amber-700/60 max-w-2xl mx-auto leading-relaxed">
-              Pileta, jardín y desayuno incluido • Cerca de la estación y Río Luján
+              Pileta, jardín, estacionamiento y desayuno incluido
             </p>
           </div>
 
@@ -75,7 +76,7 @@ export default function Home() {
             te ofrecemos una experiencia única con la calidez de la atención familiar.
           </p>
           <p className="text-base md:text-lg text-amber-800/80 text-center leading-relaxed">
-            Disfrutá de nuestra pileta exterior, jardín, y un delicioso desayuno incluido.
+            Disfrutá de nuestra pileta exterior, jardín, y un delicioso desayuno casero incluido.
             Sentite como en casa.
           </p>
         </section>
@@ -87,6 +88,9 @@ export default function Home() {
         <div id="galeria">
           <Gallery />
         </div>
+
+        {/* FAQ Section */}
+        <FAQ />
 
         {/* Reviews Section */}
         <Reviews />
@@ -106,7 +110,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-amber-900 mb-2">Dirección</h3>
               <p className="text-amber-800 text-sm md:text-base font-medium">
-                Avenida Liniers 573<br />
+                Avenida Santiago de Liniers 573<br />
                 Tigre, Buenos Aires<br />
                 Argentina
               </p>
@@ -115,12 +119,12 @@ export default function Home() {
                 y la costa del Río Luján
               </p>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Avenida+Liniers+573+Tigre+Buenos+Aires"
+                href="https://www.google.com/maps/search/?api=1&query=La+Marea+B%26B+Tigre"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-4 text-amber-700 hover:text-amber-800 font-medium text-sm underline"
               >
-                Ver en Google Maps →
+                La Marea B&B →
               </a>
             </div>
             <div className="text-center p-6 bg-amber-50/30 rounded-2xl shadow-sm border-2 border-amber-700/30">
@@ -186,7 +190,7 @@ export default function Home() {
               La Marea B&B
             </p>
             <p className="text-amber-100/70 text-xs md:text-sm">
-              Avenida Liniers 573, Tigre, Buenos Aires
+              Avenida Santiago de Liniers 573, Tigre, Buenos Aires
             </p>
             <p className="text-amber-100/70 text-xs md:text-sm mt-1">
               Atención familiar • Como en casa

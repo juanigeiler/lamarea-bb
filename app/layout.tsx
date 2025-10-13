@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "La Marea B&B - Bed & Breakfast en Tigre",
-    description: "Bed & Breakfast en Tigre con pileta, jardín y desayuno. Atención familiar. Avenida Liniers 573, Tigre.",
+    description: "Bed & Breakfast en Tigre con pileta, jardín y desayuno. Atención familiar. Avenida Santiago de Liniers 573, Tigre.",
     type: "website",
     locale: "es_AR",
   },

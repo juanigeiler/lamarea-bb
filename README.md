@@ -85,7 +85,7 @@ NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=tu-cloud-name
 
 ## 📞 Contacto
 
-- **Ubicación**: Avenida Liniers 573, Tigre, Buenos Aires
+- **Ubicación**: Avenida Santiago de Liniers 573, Tigre, Buenos Aires
 - **Instagram**: [@lamareatigre](https://www.instagram.com/lamareatigre/)
 - **WhatsApp**: +54 11 2640-4169
 - **Rating**: 9.6/10 en Booking.com

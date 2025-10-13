@@ -9,7 +9,7 @@ Landing page for "La Marea B&B" (Bed & Breakfast) in Tigre, Buenos Aires, Argent
 **Property Details:**
 - **Official Name**: La Marea B&B
 - **Type**: Bed & Breakfast
-- **Address**: Avenida Liniers 573, Tigre, Buenos Aires
+- **Address**: Avenida Santiago de Liniers 573, Tigre, Buenos Aires
 - **Location**: Near Tigre train station (Estación Tigre), close to Río Luján coast (NOT in the Delta)
 - **Rating**: 9.6/10 on Booking.com
 - **Payment**: Cash only
@@ -75,11 +75,11 @@ npm run lint
 - Twitter Card metadata
 - Local keywords: "bed and breakfast tigre", "b&b tigre", "hospedaje tigre", "piscina tigre"
 - Description emphasizes: B&B, pool, garden, breakfast, 9.6/10 rating
-- Real address included: Avenida Liniers 573
+- Real address included: Avenida Santiago de Liniers 573
 
 ### Structured Data (app/components/StructuredData.tsx)
 - Schema.org **BedAndBreakfast** type (not Hotel)
-- Real address: Avenida Liniers 573, Tigre
+- Real address: Avenida Santiago de Liniers 573, Tigre
 - Geographic coordinates for Tigre (-34.426, -58.579)
 - AggregateRating: 9.6/10 from Booking.com
 - Amenities listed: piscina, jardín, WiFi, desayuno, parrilla
@@ -155,7 +155,7 @@ Current placeholders to replace:
 - [ ] Optional: Add room descriptions and pricing
 
 **Already completed:**
-- ✅ Real address: Avenida Liniers 573, Tigre
+- ✅ Real address: Avenida Santiago de Liniers 573, Tigre
 - ✅ Instagram handle: @lamareatigre
 - ✅ GPS coordinates: -34.426, -58.579
 - ✅ Amenities details: piscina, jardín, WiFi, desayuno, parrilla, cocina compartida

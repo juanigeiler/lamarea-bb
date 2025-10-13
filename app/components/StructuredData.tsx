@@ -6,7 +6,7 @@ export default function StructuredData() {
     description: 'Bed & Breakfast en Tigre, Buenos Aires. Pileta exterior, jardín, desayuno incluido. Cerca de la estación de tren y Río Luján.',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Avenida Liniers 573',
+      streetAddress: 'Avenida Santiago de Liniers 573',
       addressLocality: 'Tigre',
       addressRegion: 'Buenos Aires',
       addressCountry: 'AR',

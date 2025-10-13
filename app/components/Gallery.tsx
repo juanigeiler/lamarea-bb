@@ -13,11 +13,32 @@ interface GalleryImage {
 }
 
 // Imágenes reales del hotel - Cloudinary
+// Orden predeterminado: Las mejores fotos primero para causar buena impresión
 const PLACEHOLDER_IMAGES: GalleryImage[] = [
-  // Exterior (pileta, jardín)
+  // Destacadas - Exterior (pileta, jardín) - Las más atractivas primero
   {
     publicId: 'jardin-pileta',
     alt: 'Jardín con pileta exterior de La Marea B&B en Tigre',
+    category: 'exterior'
+  },
+  {
+    publicId: 'pileta_pasto_casa',
+    alt: 'Vista de la pileta y la casa de La Marea B&B',
+    category: 'exterior'
+  },
+  {
+    publicId: 'pileta_espacio_jardin',
+    alt: 'Pileta y espacio de jardín en La Marea B&B en Tigre',
+    category: 'exterior'
+  },
+  {
+    publicId: 'pileta_espacio_verde',
+    alt: 'Pileta rodeada de espacios verdes en La Marea B&B',
+    category: 'exterior'
+  },
+  {
+    publicId: 'sillas_pasto_arboles',
+    alt: 'Sillas en el jardín con árboles de La Marea B&B en Tigre',
     category: 'exterior'
   },
   {
@@ -36,32 +57,12 @@ const PLACEHOLDER_IMAGES: GalleryImage[] = [
     category: 'exterior'
   },
   {
-    publicId: 'sillas_pasto_arboles',
-    alt: 'Sillas en el jardín con árboles de La Marea B&B en Tigre',
-    category: 'exterior'
-  },
-  {
-    publicId: 'pileta_pasto_casa',
-    alt: 'Vista de la pileta y la casa de La Marea B&B',
-    category: 'exterior'
-  },
-  {
     publicId: 'planta_pasto_verde',
     alt: 'Plantas y espacios verdes en el jardín de La Marea B&B',
     category: 'exterior'
   },
-  {
-    publicId: 'pileta_espacio_jardin',
-    alt: 'Pileta y espacio de jardín en La Marea B&B en Tigre',
-    category: 'exterior'
-  },
-  {
-    publicId: 'pileta_espacio_verde',
-    alt: 'Pileta rodeada de espacios verdes en La Marea B&B',
-    category: 'exterior'
-  },
 
-  // Áreas comunes interiores
+  // Áreas comunes interiores - Después del exterior para variar
   {
     publicId: 'living_sillon',
     alt: 'Sala de estar con sillón de La Marea B&B',
@@ -78,7 +79,7 @@ const PLACEHOLDER_IMAGES: GalleryImage[] = [
     category: 'areas-comunes'
   },
 
-  // Desayuno
+  // Desayuno - Al final para cerrar con una buena nota
   {
     publicId: 'cafe-desayuno',
     alt: 'Café y desayuno en La Marea B&B en Tigre',

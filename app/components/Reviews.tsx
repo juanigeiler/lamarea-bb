@@ -23,7 +23,9 @@ export default function Reviews() {
           reviewCount: data.reviewCount
         })
         if (data.reviews && data.reviews.length > 0) {
-          setReviews(data.reviews)
+          // Filtrar solo opiniones con 5 estrellas
+          const fiveStarReviews = data.reviews.filter((review: Review) => review.rating === 5)
+          setReviews(fiveStarReviews)
         }
       })
       .catch(() => {
@@ -119,7 +121,7 @@ export default function Reviews() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="La Marea B&B - Avenida Liniers 573, Tigre"
+            title="La Marea B&B - Avenida Santiago de Liniers 573, Tigre"
             className="w-full"
           ></iframe>
         </div>
