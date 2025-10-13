@@ -26,9 +26,23 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
   },
+  metadataBase: new URL('https://lamareatigre.com.ar'),
+  alternates: {
+    canonical: 'https://lamareatigre.com.ar',
+  },
   openGraph: {
     title: "La Marea B&B - Bed & Breakfast en Tigre",
     description: "Bed & Breakfast en Tigre con pileta, jardín y desayuno. Atención familiar. Avenida Santiago de Liniers 573, Tigre.",
+    url: 'https://lamareatigre.com.ar',
+    siteName: 'La Marea B&B',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'La Marea B&B - Tigre',
+      },
+    ],
     type: "website",
     locale: "es_AR",
   },
@@ -36,6 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "La Marea B&B - Tigre",
     description: "Bed & Breakfast en Tigre con pileta y jardín. Atención familiar.",
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
