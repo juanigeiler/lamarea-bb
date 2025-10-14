@@ -16,12 +16,37 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "La Marea B&B - Bed & Breakfast en Tigre",
-  description: "La Marea B&B en Tigre, Buenos Aires. Pileta, jardín, desayuno incluido. Atención familiar y personalizada. Cerca de la estación y Río Luján.",
-  keywords: ["bed and breakfast tigre", "b&b tigre", "hospedaje tigre", "alojamiento tigre", "hotel tigre", "turismo tigre", "pileta tigre"],
+  title: "La Marea B&B - Bed & Breakfast en Tigre con Pileta | Alojamiento Tigre Buenos Aires",
+  description: "La Marea B&B en Tigre, Buenos Aires. Bed and Breakfast con pileta, jardín amplio, estacionamiento y desayuno casero incluido. Atención familiar personalizada. A 5 minutos de la estación de Tigre y del Río Luján.",
+  keywords: [
+    "bed and breakfast tigre",
+    "b&b tigre",
+    "hospedaje tigre",
+    "alojamiento tigre",
+    "hotel tigre",
+    "hotel con pileta tigre",
+    "bed and breakfast con pileta tigre",
+    "donde dormir en tigre",
+    "hospedaje tigre centro",
+    "alojamiento cerca estacion tigre",
+    "turismo tigre",
+    "hotel economico tigre",
+    "hospedaje con desayuno tigre",
+    "b&b buenos aires",
+    "alojamiento familiar tigre",
+    "hotel con jardin tigre",
+    "hospedaje con estacionamiento tigre",
+    "donde alojarse en tigre",
+    "hotel boutique tigre"
+  ],
   authors: [{ name: "La Marea B&B" }],
   icons: {
-    icon: '/icon.png',
+    icon: [
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: '/icon.png',
+    shortcut: '/icon.png',
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
@@ -31,16 +56,16 @@ export const metadata: Metadata = {
     canonical: 'https://lamareatigre.com.ar',
   },
   openGraph: {
-    title: "La Marea B&B - Bed & Breakfast en Tigre",
-    description: "Bed & Breakfast en Tigre con pileta, jardín y desayuno. Atención familiar. Avenida Santiago de Liniers 573, Tigre.",
+    title: "La Marea B&B - Bed & Breakfast en Tigre con Pileta y Jardín",
+    description: "Bed & Breakfast en Tigre con pileta, jardín amplio, estacionamiento y desayuno casero incluido. Atención familiar personalizada. Avenida Santiago de Liniers 573, a 5 minutos de la estación de Tigre.",
     url: 'https://lamareatigre.com.ar',
-    siteName: 'La Marea B&B',
+    siteName: 'La Marea B&B - Tigre Buenos Aires',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'La Marea B&B - Tigre',
+        alt: 'La Marea B&B - Bed and Breakfast con pileta en Tigre Buenos Aires',
       },
     ],
     type: "website",
@@ -48,8 +73,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "La Marea B&B - Tigre",
-    description: "Bed & Breakfast en Tigre con pileta y jardín. Atención familiar.",
+    title: "La Marea B&B - Bed & Breakfast con Pileta en Tigre",
+    description: "Bed & Breakfast en Tigre con pileta, jardín amplio, estacionamiento y desayuno incluido. Atención familiar personalizada cerca de la estación.",
     images: ['/og-image.jpg'],
   },
   robots: {

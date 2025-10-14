@@ -15,74 +15,121 @@ interface GalleryImage {
 // Imágenes reales del hotel - Cloudinary
 // Orden predeterminado: Las mejores fotos primero para causar buena impresión
 const PLACEHOLDER_IMAGES: GalleryImage[] = [
-  // Destacadas - Exterior (pileta, jardín) - Las más atractivas primero
+  // Las primeras 8 fotos (para vista inicial "Todas"): 5 exterior + 1 áreas comunes + 2 desayuno
   {
     publicId: 'jardin-pileta',
-    alt: 'Jardín con pileta exterior de La Marea B&B en Tigre',
+    alt: 'Pileta exterior climatizada con jardín amplio en La Marea B&B, Tigre Buenos Aires - Bed and Breakfast con piscina',
     category: 'exterior'
   },
   {
     publicId: 'pileta_pasto_casa',
-    alt: 'Vista de la pileta y la casa de La Marea B&B',
-    category: 'exterior'
-  },
-  {
-    publicId: 'pileta_espacio_jardin',
-    alt: 'Pileta y espacio de jardín en La Marea B&B en Tigre',
+    alt: 'Vista panorámica de la pileta, casa y jardín de La Marea B&B en Tigre - Alojamiento con pileta en Buenos Aires',
     category: 'exterior'
   },
   {
     publicId: 'pileta_espacio_verde',
-    alt: 'Pileta rodeada de espacios verdes en La Marea B&B',
+    alt: 'Pileta rodeada de amplios espacios verdes y jardín en La Marea Bed and Breakfast Tigre Buenos Aires',
     category: 'exterior'
   },
   {
     publicId: 'sillas_pasto_arboles',
-    alt: 'Sillas en el jardín con árboles de La Marea B&B en Tigre',
+    alt: 'Sillas de descanso bajo árboles en el jardín de La Marea B&B Tigre - Hospedaje con jardín cerca de la estación',
+    category: 'exterior'
+  },
+  {
+    publicId: 'reposeras_verde_relax',
+    alt: 'Reposeras para relajarse en el jardín verde de La Marea B&B Tigre - Hotel con pileta y jardín en Buenos Aires',
+    category: 'exterior'
+  },
+  {
+    publicId: 'velador-cuadros-living',
+    alt: 'Living comedor decorado y acogedor de La Marea Bed and Breakfast en Tigre Buenos Aires - Áreas comunes confortables',
+    category: 'areas-comunes'
+  },
+  {
+    publicId: 'desayuno_afuera',
+    alt: 'Desayuno casero al aire libre incluido en La Marea B&B Tigre - Desayuno gratis en jardín del B&B Buenos Aires',
+    category: 'desayuno'
+  },
+  {
+    publicId: 'cafe-desayuno',
+    alt: 'Café recién hecho y desayuno casero incluido en La Marea Bed and Breakfast Tigre - Desayuno completo gratis',
+    category: 'desayuno'
+  },
+
+  // Resto de imágenes de exterior
+  {
+    publicId: 'parrilla_cocina_almuerzo',
+    alt: 'Parrilla BBQ y quincho para asados en La Marea B&B Tigre - Bed and Breakfast con parrilla en Buenos Aires',
+    category: 'exterior'
+  },
+  {
+    publicId: 'evento_fiesta_jardin',
+    alt: 'Jardín amplio para eventos, reuniones y celebraciones en La Marea Bed and Breakfast Tigre Buenos Aires',
+    category: 'exterior'
+  },
+  {
+    publicId: 'vinos_eventos_espacio',
+    alt: 'Espacio exterior para eventos sociales y cenas al aire libre en La Marea B&B Tigre - Alojamiento con jardín',
+    category: 'exterior'
+  },
+  {
+    publicId: 'plantas_exterior_verde',
+    alt: 'Plantas ornamentales y vegetación natural en el jardín de La Marea B&B Tigre - Hospedaje rodeado de verde',
+    category: 'exterior'
+  },
+  {
+    publicId: 'garage_estacionamiento_entrada',
+    alt: 'Estacionamiento privado gratuito en La Marea Bed and Breakfast Tigre Buenos Aires - B&B con cochera gratis',
+    category: 'exterior'
+  },
+  {
+    publicId: 'arboles_pileta_plantas',
+    alt: 'Árboles nativos y plantas alrededor de la pileta en La Marea B&B Tigre - Hotel boutique con jardín natural',
     category: 'exterior'
   },
   {
     publicId: 'farol-jardin-pileta',
-    alt: 'Jardín con farol de La Marea B&B',
+    alt: 'Jardín iluminado con faroles y vista a la pileta de La Marea B&B Tigre Buenos Aires - Ambiente romántico nocturno',
     category: 'exterior'
   },
   {
     publicId: 'espacio-verde-exterior',
-    alt: 'Espacio verde y jardín de La Marea B&B en Tigre',
+    alt: 'Amplios espacios verdes y jardín parquizado en La Marea Bed and Breakfast Tigre - B&B con parque natural',
     category: 'exterior'
   },
   {
     publicId: 'macetas-exterior_fhum5c',
-    alt: 'Plantas y macetas en el jardín de La Marea B&B',
+    alt: 'Macetas decorativas con plantas en el jardín de La Marea B&B Tigre - Decoración natural del hospedaje',
     category: 'exterior'
   },
   {
     publicId: 'planta_pasto_verde',
-    alt: 'Plantas y espacios verdes en el jardín de La Marea B&B',
+    alt: 'Césped natural y plantas verdes en el jardín de La Marea B&B Tigre Buenos Aires - Espacios verdes amplios',
     category: 'exterior'
   },
 
-  // Áreas comunes interiores - Después del exterior para variar
+  // Resto de áreas comunes interiores
   {
     publicId: 'living_sillon',
-    alt: 'Sala de estar con sillón de La Marea B&B',
-    category: 'areas-comunes'
-  },
-  {
-    publicId: 'velador-cuadros-living',
-    alt: 'Living decorado con cuadros de La Marea B&B en Tigre',
+    alt: 'Sala de estar cómoda con sillones en La Marea B&B Tigre - Áreas comunes compartidas del Bed and Breakfast',
     category: 'areas-comunes'
   },
   {
     publicId: 'cuadro_living',
-    alt: 'Decoración interior del área común de La Marea B&B',
+    alt: 'Decoración interior cálida y acogedora del living de La Marea Bed and Breakfast Tigre Buenos Aires',
     category: 'areas-comunes'
   },
 
-  // Desayuno - Al final para cerrar con una buena nota
+  // Resto de desayuno
   {
-    publicId: 'cafe-desayuno',
-    alt: 'Café y desayuno en La Marea B&B en Tigre',
+    publicId: 'desayuno_incluido_casero',
+    alt: 'Desayuno casero artesanal incluido sin cargo en La Marea B&B Tigre - Medialunas, pan, dulces y café',
+    category: 'desayuno'
+  },
+  {
+    publicId: 'tazas_teteras_cafe',
+    alt: 'Café de especialidad, té y infusiones del desayuno incluido en La Marea Bed and Breakfast Tigre Buenos Aires',
     category: 'desayuno'
   },
 ]
