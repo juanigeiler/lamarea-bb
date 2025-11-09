@@ -2,12 +2,12 @@ export default function StructuredData() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BedAndBreakfast',
-    name: 'La Marea B&B - Bed and Breakfast en Tigre',
-    alternateName: 'La Marea Bed and Breakfast',
+    name: 'La Marea B&B - Hotel en Tigre',
+    alternateName: ['La Marea Hotel', 'La Marea Bed and Breakfast'],
     url: 'https://lamareatigre.com.ar',
     logo: 'https://lamareatigre.com.ar/logo.png',
-    image: 'https://lamareatigre.com.ar/og-image.jpg',
-    description: 'Bed & Breakfast en Tigre, Buenos Aires con pileta, jardín amplio, estacionamiento y desayuno casero incluido. Atención familiar personalizada. Ubicado a 5 minutos caminando de la estación de Tigre y cerca del Río Luján. Hospedaje ideal para turismo en Tigre.',
+    image: 'https://lamareatigre.com.ar/la-marea.jpg',
+    description: 'Hotel en Tigre, Buenos Aires con pileta, jardín amplio, estacionamiento y desayuno casero incluido. Atención familiar personalizada. Ubicado a 5 minutos caminando de la estación de Tigre y cerca del Río Luján. Hotel ideal para turismo en Tigre.',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Avenida Santiago de Liniers 573',
@@ -43,8 +43,8 @@ export default function StructuredData() {
       { '@type': 'LocationFeatureSpecification', name: 'Áreas comunes confortables' },
       { '@type': 'LocationFeatureSpecification', name: 'Atención personalizada por los dueños' },
     ],
-    additionalType: 'https://schema.org/LodgingBusiness',
-    knowsAbout: ['Turismo en Tigre', 'Delta del Paraná', 'Río Luján', 'Estación Tigre'],
+    additionalType: ['https://schema.org/Hotel', 'https://schema.org/LodgingBusiness'],
+    knowsAbout: ['Hotel Tigre', 'Turismo en Tigre', 'Delta del Paraná', 'Río Luján', 'Estación Tigre', 'Hospedaje Tigre'],
     areaServed: {
       '@type': 'City',
       name: 'Tigre',

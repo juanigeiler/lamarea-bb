@@ -37,7 +37,7 @@ export default function Home() {
             <RatingBadge />
 
             <p className="text-lg sm:text-xl md:text-2xl text-amber-800 mb-2 md:mb-3 font-light">
-              Bed & Breakfast en Tigre
+              Hotel en Tigre
             </p>
             <p className="text-base sm:text-lg text-amber-700/80 max-w-2xl mx-auto leading-relaxed mb-1.5">
               Un lugar cálido y acogedor, atendido por sus dueños
@@ -71,7 +71,7 @@ export default function Home() {
             Bienvenidos
           </h2>
           <p className="text-base md:text-lg text-amber-800/80 text-center leading-relaxed mb-6">
-            <strong className="text-amber-900">La Marea B&B</strong> es tu refugio en el corazón de Tigre.
+            <strong className="text-amber-900">La Marea B&B</strong> es tu hotel en el corazón de Tigre.
             Ubicados cerca de la estación de tren y a pasos de la costa del Río Luján,
             te ofrecemos una experiencia única con la calidez de la atención familiar.
           </p>
